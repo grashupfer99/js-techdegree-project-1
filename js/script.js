@@ -9,6 +9,9 @@
 // Setting up variables for our timer
 let timer;
 let delay = 20000;
+// To store last color and quote numbers 
+let lastQuote;
+let lastColor;
 
 // Storing DOM strings in one place in case they are changed
 const DOMstrings = {
@@ -19,9 +22,17 @@ const DOMstrings = {
 
 // Selecting a random quote from the array of quotes and returning a randomly selected quote object.
 function getRandomQuote() {
-    const rand = Math.floor(Math.random() * quotes.length);
-    console.log(rand);
-    return quotes[rand];
+    let rand = randNum(quotes);
+
+    // Make sure current and prev rand numbers for quotes aren't the same  
+    if(rand === lastQuote){
+        rand = randNum(quotes);
+    } 
+
+    // Storing the last rand number for quotes
+    lastQuote = rand;
+    
+    return quotes[rand];   
 }
 
 // Printing out the randomly selected quote
@@ -61,8 +72,18 @@ function printQuote() {
 // Random hex color generator
 function randColorGenerator() {
     let hexColor = "#";
-    let color = [Math.floor(Math.random() * colors.length)];
+    let color = randNum(colors);
+
+    // Make sure current and prev rand numbers for bg color aren't the same
+    if(color === lastColor){
+        color = randNum(colors);
+    }
+
     hexColor += colors[color];
+
+    // Storing the last rand number for bg color
+    lastColor = color;
+
     return hexColor;
 }
 
@@ -70,6 +91,11 @@ function randColorGenerator() {
 function updateTimer(){
     clearInterval(timer);
     timer = setInterval(printQuote, delay);
+}
+
+// Random number generator
+function randNum(obj){
+    return Math.floor(Math.random() * obj.length);
 }
 
 // Invoking the printQuote function
