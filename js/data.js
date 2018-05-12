@@ -26,7 +26,6 @@ const quotes = [
     {
         quote: 'Learning never exhausts the mind.',
         source: 'Leonardo da Vinci',
-        tags: 'learning'
     },
     {
         quote: 'The empires of the future are the empires of the mind.',
@@ -65,7 +64,6 @@ const quotes = [
         quote: 'No man ever steps in the same river twice, for it\'s not the same river and he\'s not the same man',
         source: 'Heraclitus',
         year: '500 BC',
-        tags: 'philosophy'
     },
     {
         quote: 'And whatsoever ye do, do it heartily, as to the Lord, and not unto men',
@@ -102,6 +100,5 @@ const quotes = [
     {
         quote: 'If you fell down yesterday, stand up today.',
         source: 'H.G.Wells',
-        tags: 'motivational'
     },
 ];
