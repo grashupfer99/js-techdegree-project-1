@@ -22,6 +22,7 @@ const DOMstrings = {
 
 // Selecting a random quote from the array of quotes and returning a randomly selected quote object.
 function getRandomQuote() {
+<<<<<<< HEAD
     let rand = randNum(quotes);
 
     // Make sure current and prev rand numbers for quotes aren't the same  
@@ -33,6 +34,10 @@ function getRandomQuote() {
     lastQuote = rand;
     
     return quotes[rand];   
+=======
+    const rand = Math.floor(Math.random() * quotes.length);
+    return quotes[rand];
+>>>>>>> origin/master
 }
 
 // Printing out the randomly selected quote
