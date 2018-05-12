@@ -20,7 +20,6 @@ const DOMstrings = {
 // Selecting a random quote from the array of quotes and returning a randomly selected quote object.
 function getRandomQuote() {
     const rand = Math.floor(Math.random() * quotes.length);
-    console.log(rand);
     return quotes[rand];
 }
 
